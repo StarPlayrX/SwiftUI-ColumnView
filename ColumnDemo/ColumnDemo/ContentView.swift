@@ -13,21 +13,25 @@ struct ContentView: View {
 
         ZStack {
             NavigationView {
+
+                // If compiled for macOS 10.15, this gets triggered too
                 if UIDevice.current.userInterfaceIdiom == .pad {
 
                     // 1
-                    AboutScreen()
+                    AboutScreen() // Initially hidden about screen
 
                     // 2
-                    ColumnView()
+                    ColumnView() // provides a wider left column on iPadOS
 
                     // 3
-                    detailView() // comment this out and see what happens!
+                    DetailView() // comment this out and see what happens!
                 } else {
+
                     // 1
                     ColumnView()
+
                     // 2
-                    detailView()
+                    DetailView()
                 }
             }
         }
@@ -35,7 +39,6 @@ struct ContentView: View {
 
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

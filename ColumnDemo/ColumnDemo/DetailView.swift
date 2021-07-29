@@ -7,11 +7,13 @@
 
 import SwiftUI
 
-func detailView() -> some View {
-    Group {
-        Text("This is a detail view.")
+struct DetailView: View {
+    var body: some View {
+        Group {
+            Text("This is a detail view.")
+        }
+        .navigationBarTitle("Item Details", displayMode: .inline)
     }
-    .navigationBarTitle("Item Details", displayMode: .inline)
 }
 
 
